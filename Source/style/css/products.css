@@ -1,0 +1,23 @@
+.products{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.products .index-product{
+    padding-top:0!important;
+    text-align: center;
+}
+.products .index-product img{
+    width: 300px;
+    height: 300px;
+    border-radius: 0.5rem;
+    border: 5px solid lightcyan;
+	-webkit-box-shadow: 0 10px 6px -6px #777;
+	-moz-box-shadow: 0 10px 6px -6px #777;
+    box-shadow: 0 10px 6px -6px #777;
+}
+.index-product .col-sm-4.col-md-4.prod{
+    max-width:100%!important;
+}
