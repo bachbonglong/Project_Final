@@ -82,7 +82,7 @@ $connect = mysqli_connect("localhost", "root", "", "bookdb");
   <option value="khoahoc">Khoa học</option>
   <option value="vientuong">Viễn tưởng</option>
 	</select>
-          <input type="submit" name="add" class="fadeIn fourth" value="Thêm Vào!!!">
+          <input type="submit" name="add" class="fadeIn fourth" value="Thêm Vào">
         </form>
 		
 		

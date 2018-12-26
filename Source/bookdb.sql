@@ -202,15 +202,14 @@ CREATE TABLE `product-detail` (
 --
 
 CREATE TABLE `user` (
-  `idmember` varchar(255) NOT NULL,
+  `idmember` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `address` varchar(255) NOT NULL,
   `phoneNumber` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO `user` (`idmember`, `name`, `password`, `address`, `phoneNumber`) VALUES
-(1,'bachbonglong','Onelove76114','116A','0914180198');
+
 -- --------------------------------------------------------
 
 --

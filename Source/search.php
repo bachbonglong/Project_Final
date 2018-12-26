@@ -88,13 +88,7 @@ $connect = mysqli_connect("localhost", "root", "", "bookdb");
 						<div class="panel-title">
 							<div class="row">
 								<div class="col-md-6">
-									<h5><span class="glyphicon glyphicon-shopping-cart"></span> kết quả tìm kiếm</h5>
-								</div>
-								<div class="col-md-6"><a href="products.php">
-										<button type="button" class="btn btn-primary btn-sm btn-block">
-											<span class="glyphicon glyphicon-share-alt"></span> Tiếp tục mua hàng
-										</button>
-									</a>
+									<h5><span class="glyphicon glyphicon-shopping-cart"></span> Kết quả tìm kiếm</h5>
 								</div>
 							</div>
 						</div>
@@ -151,7 +145,7 @@ $connect = mysqli_connect("localhost", "root", "", "bookdb");
 
 			if(!empty($_POST['searchproduct'])){
 				$search = trim($_POST['searchproduct']);
-				$query = "select * from hotproduct where CONCAT(`name`) like '%$search%'";
+				$query = "select * from product where CONCAT(`name`) like '%$search%'";
 				
 				$result = mysqli_query($connect, $query);
 
@@ -161,7 +155,7 @@ $connect = mysqli_connect("localhost", "root", "", "bookdb");
 					{
 				
 					?>		
-					<div class="panel-body panel-body-cart" >
+					<div style="margin-top:50px" >
 						<div class="row">
 							<div class="col-md-2"><img class="img-responsive" src="img/<?php echo $row["image"]; ?> ">
 							</div>
@@ -173,7 +167,7 @@ $connect = mysqli_connect("localhost", "root", "", "bookdb");
 							<div class="col-md-4 omg">
 								<div class="row">
 									<div class="col-md-4 align">
-										<h6><strong><?php echo $row["price"];?>&#x20AB; <span class="text-muted">x</span></strong></h6>
+										<h6><strong><?php echo $row["price"];?>&#x20AB; <span class="text-muted"></span></strong></h6>
 									</div>
 									<form action="products.php" method="post">
 														<input type="hidden" name="hidden_img" value="<?php echo $row["image"]; ?>"/>
@@ -200,7 +194,7 @@ $connect = mysqli_connect("localhost", "root", "", "bookdb");
 								}
 			}
 								else{
-											
+									echo '<script>alert("không tìm thấy sản phẩm");</script>';
 								}
 								?>
 								
@@ -232,10 +226,18 @@ $connect = mysqli_connect("localhost", "root", "", "bookdb");
 				<div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
 					<h6 class="text-uppercase mb-4 font-weight-bold">Products</h6>
 					<p>
-						<a href="products.php">Trái cây</a>
+						<a href="products.php">Lãng Mạn</a>
 					</p>
 					<p>
-						<a href="products.php">Rau củ</a>
+						<a href="products.php">Truyện Ngắn</a>
+
+					</p>
+					<p>
+						<a href="products.php">Khoa Học</a>
+
+					</p>
+					<p>
+						<a href="products.php">Viễn Tưởng</a>
 
 					</p>
 				</div>

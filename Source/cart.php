@@ -93,12 +93,16 @@ $connect = mysqli_connect("localhost", "root", "", "bookdb");
 						<a class="nav-link disabled" href="about.php">Thông tin</a>
 					</li>
 				</ul>
-				<form class="form-inline my-2 my-lg-0">
-					<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-					<a class="button custom" href="cart.php"><i class="fas fa-shopping-cart"></i></a>
+				<form method="post" action="search.php" class="form-inline my-2 my-lg-0">
+					
+                    <input class="form-control mr-sm-2" type="search" name="searchproduct" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" name= "search" type="submit">Search</button>
+					
+					<a class="button custom" href="<?php echo "cart.php";?>" method="get"><i class="fas fa-shopping-cart"></i></a>
+					
                     <span class='badge badge-warning' id='lblCartCount'></span>
-				</form>
+					
+                </form>
 			</div>
 		</nav>
 	</div>

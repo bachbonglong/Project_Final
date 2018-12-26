@@ -1,32 +1,26 @@
 <!DOCTYPE html>
 <?php
-function reg(){
+if(isset($_POST['reg'])){
 							
 							
 $connect = mysqli_connect("localhost", "root", "", "bookdb");
 $query = "SELECT * FROM user ";
 				$result = mysqli_query($connect, $query);
-				if(mysqli_num_rows($result) > 0)
-				{
-					  
 							if($_POST['password1'] == $_POST['password2'] and $_POST['name']!="admin" or $_POST['password1']!="admin"){
-														$sql = "INSERT INTO user(name,password,address,phoneNumber)
+							$sql = "INSERT INTO user(name,password,address,phoneNumber)
 							values('{$_POST['name']}','{$_POST['password1']}','{$_POST['register']}','{$_POST['sdt']}')";
 							
 							if ($connect->query($sql) === TRUE) {
-							echo "";
+							echo "Bạn Đã Đăng Kí Thành Công";
 							} else {
-							echo "";
+							echo "Kiểm Tra lại mật khẩu xem đã giống nhau chưa ??";
 							}
-              }
+              
             
             }
           
 }
 
-if(array_key_exists('reg',$_POST)){
-							reg();	
-							}
 						
 	
 ?>
