@@ -1,16 +1,28 @@
 
 <?php
-$connect = mysqli_connect("localhost", "root", "", "test");
-							
+$connect = mysqli_connect("localhost", "root", "", "bookdb");
+    
+    
 		if(isset($_POST['submit'])){
+      $table = $_POST['table'];
 			$name = $_POST['name'];
 							$id = $_POST['id'];
-		$connect = mysqli_connect("localhost", "root", "", "test");
+		$connect = mysqli_connect("localhost", "root", "", "bookdb");
 									
-									$sql = "delete from products where id='$id'";
+									$sql = "delete from product where id='$id'";
 								
 								
 							if ($connect->query($sql) === TRUE) {
+							
+							echo "deleted";
+								
+							} else {
+							echo "";
+              }
+              $sql1 = "delete from $table where id='$id'";
+								
+								
+							if ($connect->query($sql1) === TRUE) {
 							
 							echo "deleted";
 								
@@ -42,7 +54,7 @@ $connect = mysqli_connect("localhost", "root", "", "test");
     <div class="login-form wrapper fadeInDown">
       <div id="formContentLogin">
         <div class="form-title">
-          <h2 class="active"> Xóa Sản Phẩm </h2>
+          <h2 class="active"> xóa sản phẩm </h2>
         </div>
         <div class="fadeIn first">
           <img src="style/pictures/icon-login.svg" id="icon-login" alt="User Icon" />
@@ -51,13 +63,18 @@ $connect = mysqli_connect("localhost", "root", "", "test");
           <input type="text" id="id" class="fadeIn second" name="id" placeholder="mã sản phẩm">
           
 		  <input type="text" id="name" class="fadeIn second" name="name" placeholder="tên sản phẩm">
-          
+      <p class="fadeIn second">bạn muốn xóa ở đâu:</p>  
+		<select class="form-control" name="table">
+  <option value="">---</option>
+  <option value="product">tất cả sản phẩm</option>
+  <option value="hotproduct">sản phẩm hot</option>
+  <option value="langman">Lãng mạn</option>
+  <option value="veg">Truyện ngắn</option>
+  <option value="khoahoc">Khoa học</option>
+  <option value="vientuong">Viễn tưởng</option>
+	</select>
           <input type="submit" name="submit" class="fadeIn fourth" value="xóa nhe!!!">
         </form>
-		<div id="formFooter">
-          <a class="underlineHover" name="forget" href="" onclick="alert('gọi điện thoại tới thằng chủ dùm t. OK?');">Quên mật khẩu?</a>
-        
-		</div>
       </div>
     </div>
   </div>

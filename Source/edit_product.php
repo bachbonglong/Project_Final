@@ -1,16 +1,28 @@
 <?php
-$connect = mysqli_connect("localhost", "root", "", "test");
-		
+$connect = mysqli_connect("localhost", "root", "", "bookdb");
+error_reporting(0);
 		if(isset($_POST['edit'])){
+      $table = $_POST['table'];
 		$name = $_POST['name'];
 								$price = $_POST['price'];
 								$id = $_POST['id'];
-		$connect = mysqli_connect("localhost", "root", "", "test");
+		$connect = mysqli_connect("localhost", "root", "", "bookdb");
 									
-									$sql = "update products set price='$price',name='$name' where id='$id'";
+									$sql = "update product set price='$price',name='$name' where id='$id'";
 								
 								
 							if ($connect->query($sql) === TRUE) {
+							
+							echo "ok";
+								
+							} else {
+							echo "";
+              }
+              
+              $sql1 = "update $table set price='$price',name='$name' where id='$id'";
+								
+								
+							if ($connect->query($sql1) === TRUE) {
 							
 							echo "ok";
 								
@@ -43,7 +55,7 @@ $connect = mysqli_connect("localhost", "root", "", "test");
     <div class="login-form wrapper fadeInDown">
       <div id="formContentLogin">
         <div class="form-title">
-          <h2 class="active"> Chỉnh Sửa Sản Phẩm </h2>
+          <h2 class="active"> Đăng nhập </h2>
         </div>
         <div class="fadeIn first">
           <img src="style/pictures/icon-login.svg" id="icon-login" alt="User Icon" />
@@ -52,7 +64,16 @@ $connect = mysqli_connect("localhost", "root", "", "test");
           <input type="text" id="name" class="fadeIn second" name="name" placeholder="tên sản phẩm">
           <input type="text" id="price" name="price" placeholder="giá sản phẩm">
           <input type="text" id="id" name="id" placeholder="mã sản phẩm">
-		  
+          <p class="fadeIn second">bạn muốn sửa ở đâu:</p>  
+		<select class="form-control" name="table">
+  <option value="">---</option>
+  <option value="product">tất cả sản phẩm</option>
+  <option value="hotproduct">sản phẩm hot</option>
+  <option value="langman">Lãng mạn</option>
+  <option value="veg">Truyện ngắn</option>
+  <option value="khoahoc">Khoa học</option>
+  <option value="vientuong">Viễn tưởng</option>
+	</select>
           <input type="submit" name="edit" class="fadeIn fourth" value="sửa nhe!!!">
         </form>
 		

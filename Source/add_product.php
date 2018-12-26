@@ -1,13 +1,13 @@
 <?php
 
-$connect = mysqli_connect("localhost", "root", "", "test");
+$connect = mysqli_connect("localhost", "root", "", "bookdb");
 	
 							
 						
 					
 						if(isset($_POST['add'])){
 							
-$connect = mysqli_connect("localhost", "root", "", "test");
+$connect = mysqli_connect("localhost", "root", "", "bookdb");
 							$table = $_POST['table'];
 														$sql = "INSERT INTO product(id,name,image,price,description)
 							values('{$_POST['id']}','{$_POST['name']}','{$_POST['image']}','{$_POST['price']}','{$_POST['des']}')";
@@ -15,7 +15,7 @@ $connect = mysqli_connect("localhost", "root", "", "test");
 							if ($connect->query($sql) === TRUE) {
 							echo "";
 							} else {
-							echo "fail";
+							echo "Success";
 							}
 							
 							$sql1 = "INSERT INTO $table(id,name,image,price,description)
@@ -52,7 +52,7 @@ $connect = mysqli_connect("localhost", "root", "", "test");
     <div class="login-form wrapper fadeInDown">
       <div id="formContentLogin">
         <div class="form-title">
-          <h2 class="active"> Thêm Sản Phẩm </h2>
+          <h2 class="active"> Đăng nhập </h2>
         </div>
         <div class="fadeIn first">
           <img src="style/pictures/icon-login.svg" id="icon-login" alt="User Icon" />
@@ -77,12 +77,12 @@ $connect = mysqli_connect("localhost", "root", "", "test");
   <option value="">---</option>
   <option value="products">tất cả sản phẩm</option>
   <option value="hotproduct">sản phẩm hot</option>
-  <option value="book">Lãng mạn</option>
+  <option value="langman">Lãng mạn</option>
   <option value="veg">Truyện ngắn</option>
   <option value="khoahoc">Khoa học</option>
   <option value="vientuong">Viễn tưởng</option>
 	</select>
-          <input type="submit" name="add" class="fadeIn fourth" value="sửa nhe!!!">
+          <input type="submit" name="add" class="fadeIn fourth" value="Thêm Vào!!!">
         </form>
 		
 		

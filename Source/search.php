@@ -1,11 +1,11 @@
 
 <?php 
 session_start();
-$connect = mysqli_connect("localhost", "root", "", "test");
+$connect = mysqli_connect("localhost", "root", "", "bookdb");
 
 if(isset($_POST['add'])){
 							
-$connect = mysqli_connect("localhost", "root", "", "test");
+$connect = mysqli_connect("localhost", "root", "", "bookdb");
 														$sql = "INSERT INTO cart(id,name,image,price)
 							values('{$_POST['hidden_id']}','{$_POST['hidden_name']}','{$_POST['hidden_img']}','{$_POST['hidden_price']}')";
 							
@@ -49,7 +49,7 @@ $connect = mysqli_connect("localhost", "root", "", "test");
 	</div>
 	<div class="navigation">
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-			<img class="navbar-brand" src="./style//pictures/organicLogo.png" width="80px">
+			<img class="navbar-brand" src="./style//pictures/icon.png" width="80px">
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
 			 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
@@ -147,7 +147,7 @@ function timedRefresh(timeoutPeriod) {
 <?php
 
 				error_reporting(0);				
-$connect = mysqli_connect("localhost", "root", "", "test");
+$connect = mysqli_connect("localhost", "root", "", "bookdb");
 
 			if(!empty($_POST['searchproduct'])){
 				$search = trim($_POST['searchproduct']);
@@ -163,7 +163,7 @@ $connect = mysqli_connect("localhost", "root", "", "test");
 					?>		
 					<div class="panel-body panel-body-cart" >
 						<div class="row">
-							<div class="col-md-2"><img class="img-responsive" src="book/<?php echo $row["image"]; ?> ">
+							<div class="col-md-2"><img class="img-responsive" src="img/<?php echo $row["image"]; ?> ">
 							</div>
 							<div class="col-md-6">
 								<h4 class="product-name"><strong>Sản phẩm</strong></h4>
@@ -200,7 +200,7 @@ $connect = mysqli_connect("localhost", "root", "", "test");
 								}
 			}
 								else{
-									echo '<script>alert("không tìm thấy sản phẩm");</script>';
+											
 								}
 								?>
 								

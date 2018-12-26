@@ -3,20 +3,20 @@
 function reg(){
 							
 							
-$connect = mysqli_connect("localhost", "root", "", "test");
+$connect = mysqli_connect("localhost", "root", "", "bookdb");
 $query = "SELECT * FROM user ";
 				$result = mysqli_query($connect, $query);
 				if(mysqli_num_rows($result) > 0)
 				{
 					  
 							if($_POST['password1'] == $_POST['password2'] and $_POST['name']!="admin" or $_POST['password1']!="admin"){
-														$sql = "INSERT INTO user(id,name,password,address,phoneNumber)
-							values'{$_POST['id']}',('{$_POST['name']}','{$_POST['password']}','{$_POST['address']}','{$_POST['phoneNumber']}')";
+														$sql = "INSERT INTO user(name,password,address,phoneNumber)
+							values('{$_POST['name']}','{$_POST['password1']}','{$_POST['register']}','{$_POST['sdt']}')";
 							
 							if ($connect->query($sql) === TRUE) {
 							echo "";
 							} else {
-							echo "trùng mã sản phẩm";
+							echo "";
 							}
               }
             
@@ -58,10 +58,24 @@ if(array_key_exists('reg',$_POST)){
        
 			<div class="form-display">
               <input type="text" id="name" class="fadeIn second" name="name" placeholder="Tài khoản" maxLength="20">
-              <input type="text" id="password" class="fadeIn third pass" name="password1" placeholder="Mật khẩu" autocomplete="off" maxLength="20">
+              <input type="password" id="password"  style="background:#e0ffff;
+	  text-align:center;
+	  text-decoration: none;
+	  display: inline-block;
+	  font-size: 16px;
+	  margin: 5px;
+	  border: 2px solid #f6f6f6;
+	  border-radius: 5px 5px 5px 5px;" name="password1" placeholder="Mật khẩu" autocomplete="off" maxLength="20">
             </div>
             <div class="form-display">
-              <input type="text" id="password" class="fadeIn third" name="password2" placeholder="Nhập lại mật khẩu">
+              <input type="password" id="password"style="background:#e0ffff;
+	  text-align:center;
+	  text-decoration: none;
+	  display: inline-block;
+	  font-size: 16px;
+	  margin: 5px;
+	  border: 2px solid #f6f6f6;
+	  border-radius: 5px 5px 5px 5px;" name="password2" placeholder="Nhập lại mật khẩu">
               <input type="text" id="address" class="fadeIn third" name="register" placeholder="Địa chỉ">
             </div>
             <div>

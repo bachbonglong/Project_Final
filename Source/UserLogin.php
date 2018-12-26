@@ -1,10 +1,10 @@
 <?php 
 session_start();
-$connect = mysqli_connect("localhost", "root", "", "test");
+$connect = mysqli_connect("localhost", "root", "", "bookdb");
 	
 						function add(){
 							
-$connect = mysqli_connect("localhost", "root", "", "test");
+$connect = mysqli_connect("localhost", "root", "", "bookdb");
 														$sql = "INSERT INTO cart(id,name,image,price)
 							values('{$_POST['hidden_id']}','{$_POST['hidden_name']}','{$_POST['hidden_img']}','{$_POST['hidden_price']}')";
 							
@@ -46,11 +46,11 @@ $connect = mysqli_connect("localhost", "root", "", "test");
         <div class="top-bar-left">Free ship cho đơn hàng trên 100.000 &#8363;</div>
         <div class="top-bar-right">
             <div class="top-bar-right-content">
-				<a class="phone" href="add_product.php"> thêm sản phẩm </a>
-				<a class="phone" href="edit_product.php"> sửa sản phẩm </a>
-				<a class="phone" href="del_product.php"> xóa sản phẩm </a>
+				<a class="phone" href="add_product.php"> Thêm sản phẩm </a>
+				<a class="phone" href="edit_product.php"> Sửa sản phẩm </a>
+				<a class="phone" href="del_product.php"> Xóa sản phẩm </a>
 				<a class="phone" href="index.php"> Đăng xuất </a>
-				<a class="phone" href="">&nbsp;<i class="fas fa-phone-volume"></i> 01258906910&nbsp;</a>
+				<a class="phone" href="">&nbsp;<i class="fas fa-phone-volume"></i> +84 982 460 665&nbsp;</a>
                 </div>
         </div>
     </div>
@@ -137,7 +137,7 @@ $connect = mysqli_connect("localhost", "root", "", "test");
 			
 			
 	
-				$query = "SELECT * FROM products ORDER BY id ASC";
+				$query = "SELECT * FROM hotproduct ORDER BY id ASC";
 				$result = mysqli_query($connect, $query);
 				if(mysqli_num_rows($result) > 0)
 				{
@@ -145,28 +145,37 @@ $connect = mysqli_connect("localhost", "root", "", "test");
 					{
 						
 				?>
-				
-							<div class="col-sm-4 col-md-4 prod">
-						<form method="get" name="form-submit" action="product-detail.php?action=&id=<?php echo $row["id"]; ?>">
+				<div class="col-sm-4 col-md-4 prod">
+							<form method="post" name="form-submit" action="product-detail.php?action=&id=<?php echo $row["id"]; ?>">
 						
-						<img src="book/<?php echo $row["image"]; ?>" class="img-responsive" /><br />
-						<div class="product-index-info">
-						<h4 class="text-info"><?php echo $row["name"]; ?></h4>
-
-						<h4 class="text-danger"> <?php echo $row["price"]; ?> &#x20AB; </h4>
-						<h4 class="text-danger">mã sản phẩm: <?php echo $row["id"]; ?>  </h4>
-						
-						<input type="hidden" name="hidden_img" value="<?php echo $row["image"]; ?>"/>
+                                <img src="img/<?php echo $row["image"]; ?>" alt="">
+                                <div class="product-index-info">
+                                    <h3><?php echo $row["name"]; ?></h3>
+                                    <p><?php echo $row["price"]; ?> &#x20AB;</p>
+                                </div>
+								<input type="hidden" name="hidden_img" value="<?php echo $row["image"]; ?>"/>
+						<input type="hidden" name="hidden_id" value="<?php echo $row["id"]; ?>"/>
 
 						<input type="hidden" name="hidden_name" value="<?php echo $row["name"]; ?>" />
 
 						<input type="hidden" name="hidden_price" value="<?php echo $row["price"]; ?>" />
-						</div>
-						
-						
-						
-						</form>
-						</div>
+						<input type="hidden" name="hidden_des" value="<?php echo $row["description"]; ?>" />
+						 <div class="button">
+						 <button class="btn btn-success" type="submit">Xem chi tiết</button>
+						 </div>
+						</form>	
+						<form action="UserLogin.php" method="post">
+														<input type="hidden" name="hidden_img" value="<?php echo $row["image"]; ?>"/>
+						<input type="hidden" name="hidden_id" value="<?php echo $row["id"]; ?>"/>
+
+						<input type="hidden" name="hidden_name" value="<?php echo $row["name"]; ?>" />
+
+						<input type="hidden" name="hidden_price" value="<?php echo $row["price"]; ?>" />
+                                <div class="button">
+                                     <button id="addpro" name="add" onclick="AddPro()" class="btn btn-danger">Thêm vào giỏ</button>
+                                </div>
+								</form>
+                            </div>
 			
 				
 				

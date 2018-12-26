@@ -1,10 +1,10 @@
 <?php 
 session_start();
-$connect = mysqli_connect("localhost", "root", "", "test");
+$connect = mysqli_connect("localhost", "root", "", "bookdb");
 	
 						function add(){
 							
-$connect = mysqli_connect("localhost", "root", "", "test");
+$connect = mysqli_connect("localhost", "root", "", "bookdb");
 														$sql = "INSERT INTO cart(id,name,image,price)
 							values('{$_POST['hidden_id']}','{$_POST['hidden_name']}','{$_POST['hidden_img']}','{$_POST['hidden_price']}')";
 							
@@ -49,7 +49,9 @@ $connect = mysqli_connect("localhost", "root", "", "test");
         <div class="top-bar-left">Free ship cho đơn hàng trên 100.000 &#8363;</div>
         <div class="top-bar-right">
             <div class="top-bar-right-content">
-                <a class="phone" href="https://www.facebook.com/chi.thien.503">&nbsp;<i class="fas fa-phone-volume"></i> 01258906910&nbsp;</a>
+				<a class="phone"> WELCOME YOU </a>
+                <a class="phone" href="index.php"> Đăng xuất </a>
+				<a class="phone" href="https://www.facebook.com/chi.thien.503">&nbsp;<i class="fas fa-phone-volume"></i> 01258906910&nbsp;</a>
                 
             </div>
         </div>
@@ -150,7 +152,7 @@ $connect = mysqli_connect("localhost", "root", "", "test");
 							<div class="col-sm-4 col-md-4 prod">
 							<form method="post" name="form-submit" action="product-detail.php?action=&id=<?php echo $row["id"]; ?>">
 						
-                                <img src="book/<?php echo $row["image"]; ?>" alt="">
+                                <img src="img/<?php echo $row["image"]; ?>" alt="">
                                 <div class="product-index-info">
                                     <h3><?php echo $row["name"]; ?></h3>
                                     <p><?php echo $row["price"]; ?> &#x20AB;</p>

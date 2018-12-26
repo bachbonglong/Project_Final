@@ -20,6 +20,8 @@
 body{
     font-family: Quicksand-Regular;
 }
+
+
 .top-bar{
     display: flex;
     align-items: center;   
@@ -144,6 +146,7 @@ a .button.custom{
     margin-top: 150px;
     margin-left: 200px;
 }
+
 .product-index-info{
     padding-top:0.5rem;
     text-align: left;

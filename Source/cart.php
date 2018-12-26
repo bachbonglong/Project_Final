@@ -1,10 +1,10 @@
 ﻿
 <?php 
 session_start();
-$connect = mysqli_connect("localhost", "root", "", "test");
+$connect = mysqli_connect("localhost", "root", "", "bookdb");
 	
 	function deleteel(){
-		$connect = mysqli_connect("localhost", "root", "", "test");
+		$connect = mysqli_connect("localhost", "root", "", "bookdb");
 									
 									
 								$quantity = $_POST['quantity'];
@@ -16,7 +16,7 @@ $connect = mysqli_connect("localhost", "root", "", "test");
 									
 							if ($connect->query($sql) === TRUE) {
 							
-							echo "Tiếp Tục Mua Hàng";
+							echo "ok";
 								
 							} else {
 							echo "";
@@ -32,11 +32,11 @@ $connect = mysqli_connect("localhost", "root", "", "test");
 							
 	if(isset($_POST['thanhtoan'])){
 		$sql = "delete from cart";
-		header('Location: http://localhost/index.php');
+		header('Location: http://localhost/products.php');
 				
 		if ($connect->query($sql) === TRUE) {
 							
-							echo "Tiếp Tục Mua Hàng";
+							echo "ok";
 								
 							} else {
 							echo "";
@@ -68,7 +68,7 @@ $connect = mysqli_connect("localhost", "root", "", "test");
 		<div class="top-bar-left">Free ship cho đơn hàng trên 100.000 &#8363;</div>
 		<div class="top-bar-right">
 			<div class="top-bar-right-content">
-				<a class="phone" href="">&nbsp;<i class="fas fa-phone-volume"></i> 01258906910&nbsp;</a>
+				<a class="phone" href="">&nbsp;<i class="fas fa-phone-volume"></i> +84 982 460 +84 982 460 665&nbsp;</a>
 				<a class="login" href="login.php">Đăng nhập&nbsp;</a>
 				<a class="register" href="signup.php">Đăng kí&nbsp;</a>
 			</div>
@@ -185,7 +185,7 @@ function timedRefresh(timeoutPeriod) {
 					
 					<div class="panel-body panel-body-cart">
 						<div class="row">
-							<div class="col-md-2"><img class="img-responsive" src="book/<?php echo $row["image"]; ?> ">
+							<div class="col-md-2"><img class="img-responsive" src="img/<?php echo $row["image"]; ?> ">
 							</div>
 							<div class="col-md-6">
 								<h4 class="product-name"><strong>Sản phẩm</strong></h4>
@@ -213,7 +213,7 @@ function timedRefresh(timeoutPeriod) {
 								
 								<?php 
 								
-								$connect = mysqli_connect("localhost", "root", "", "test");
+								$connect = mysqli_connect("localhost", "root", "", "bookdb");
 								if(isset($_POST['submit'])){
 								if(isset($_POST['quantity']))
 								{
@@ -272,8 +272,8 @@ function timedRefresh(timeoutPeriod) {
 							<div class="col-md-3">
 								<form action="cart.php" method="post">
 							
-								<button type="submit" name="thanhtoan" onclick="alert('cảm ơn quý khách đã mua sách của chúng tôi giá giỏ hàng của quý khách là:<?php echo $tong;?>&#x20AB;')" name ="sum" id="sum"  class="btn btn-success btn-block">
-									<a href="products.php"> Thanh toán </a>
+								<button type="submit" name="thanhtoan" onclick="alert('Cảm ơn quý khách đã mua quyển sách này. Chúng tôi sẽ liên lạc với quý khách sớm nhất để giao hàng cho quý khách đúng thời điểm. Giá của quyển sách này là :   <?php echo $tong;?> &#x20AB .............................................................................. Tiếp tục mua những quyển sách khác ?')" name ="sum" id="sum" onclick="window.location.reload();" class="btn btn-success btn-block">
+									Thanh toán
 								</button>
 								
 							</form>
@@ -330,7 +330,7 @@ function timedRefresh(timeoutPeriod) {
                         <i class="fa fa-home mr-3"></i> Chung cư hoàng anh Gold House, Thành phố hồ chí minh</p>
                    
                     <p>
-                        <i class="fa fa-phone mr-3"></i> +84 982 460 665</p>
+                        <i class="fa fa-phone mr-3"></i> +84 982 460 +84 982 460 665</p>
 
                 </div>
                 <!-- Grid column -->

@@ -1,4 +1,6 @@
 
+
+
 /* BASIC */
 .register{
     display: flex;
@@ -20,6 +22,16 @@
     display:inline-block;
     margin: 40px 8px 10px 8px; 
     color: #cccccc;
+  }
+  
+  .passwordhide{
+	  background:#e0ffff;
+	  text-align:center;
+	  text-decoration: none;
+	  display: inline-block;
+	  font-size: 16px;
+	  margin: 5px;
+	  border: 2px solid #f6f6f6;
   }
   
   
@@ -188,6 +200,8 @@
   .register-form input#dob:placeholder {
     color: #cccccc;
   }
+  
+  
 
   .register-form select option {
     background-color: lightcyan;

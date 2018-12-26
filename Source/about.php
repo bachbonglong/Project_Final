@@ -18,7 +18,7 @@
     <div class="top-bar-left">Free ship cho đơn hàng trên 100.000 &#8363;</div>
     <div class="top-bar-right">
       <div class="top-bar-right-content">
-        <a class="phone" href="">&nbsp;<i class="fas fa-phone-volume"></i> 01258906910&nbsp;</a>
+        <a class="phone" href="">&nbsp;<i class="fas fa-phone-volume"></i> +84 982 460 665&nbsp;</a>
         <a class="login" href="login.php">Đăng nhập&nbsp;</a>
         <a class="register" href="signup.php">Đăng kí&nbsp;</a>
       </div>
@@ -58,23 +58,21 @@
   </div>
   <!------>
   <div class="media">
-    <img class="d-flex align-self-center mr-3" src="./style/pictures/28378.jpg " >
-    <div class="media-body">
+    <img class="d-flex align-self-center mr-3" src="img/info.jpg" style="height:300%" alt="Generic placeholder image">
+    <div class="media-body" style="margin-top:-150px">
 
       <pre>
-          <h5>Thông tin về chúng tôi</h5>
-			Địa chỉ VP: Lầu 12 Phòng 5, Chung Cư Hoàng Anh Gia Lai An Tiến,Huyện Nhà Bè , TP.Hồ Chí Minh
-			Điện thoại: (028) 38125969
-			Fax: 028 38 125 969
-			Tổng đài hỗ trợ (7h30 đến 22h): 1800.1061 hoặc (028) 39 48 1234
-			Tổng đài khiếu nại: 1800.1011
-			Email: bachbonglong@gmail.com
+          <h3>Thông tin về chúng tôi</h3>
+            <h6>Chúng tôi là đội ngũ bán sách chuyên nghiệp.</h6>
+			<h6>Chuyên cung cấp đầy đủ thể loại sách, đa dạng phong phú.</h6>
+				      <h6>Vận chuyển nhanh , giao hàng đúng thời hạn giá cả rẻ nhất thì trường </h6>
+			       <h3>Cam kết</h3> <h2>NÓI KHÔNG VỚI SÁCH LẬU, SÁCH GIẢ , NÂNG CAO GIÁ SÁCH</h2>
           </pre>
 
 
     </div>
   </div>
-
+	<br> <br> <br> <br> <br> <br> <br>
    <!-- Footer -->
    <footer class="page-footer font-small mdb-color pt-4">
 
@@ -94,6 +92,10 @@
         <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
             <h6 class="text-uppercase mb-4 font-weight-bold">Sản Phẩm</h6>
             <p>
+                <a href="products.php">Tất cả sản phẩm</a>
+
+            </p>
+			<p>
                 <a href="products.php">LÃNG MẠN</a>
             </p>
             <p>
@@ -108,6 +110,7 @@
                 <a href="products.php">VIỄN TƯỞNG</a>
 
             </p>
+			
         </div>
 
         <hr class="w-100 clearfix d-md-none">
@@ -119,7 +122,7 @@
                 <i class="fa fa-home mr-3"></i> Chung cư hoàng anh Gold House, Thành phố hồ chí minh</p>
            
             <p>
-                <i class="fa fa-phone mr-3"></i> +84 982 460 665</p>
+                <i class="fa fa-phone mr-3"></i> +84 1258906910</p>
 
         </div>
         <!-- Grid column -->

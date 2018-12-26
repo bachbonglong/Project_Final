@@ -1,3 +1,29 @@
+<?php 
+session_start();
+$connect = mysqli_connect("localhost", "root", "", "bookdb");
+	
+						function add(){
+							
+$connect = mysqli_connect("localhost", "root", "", "bookdb");
+														$sql = "INSERT INTO cart(id,name,image,price)
+							values('{$_POST['hidden_id']}','{$_POST['hidden_name']}','{$_POST['hidden_img']}','{$_POST['hidden_price']}')";
+							
+							if ($connect->query($sql) === TRUE) {
+							echo "";
+							} else {
+							echo "";
+							}
+							
+						}
+
+						if(array_key_exists('addtocart',$_POST)){
+							add();	
+							}
+								
+						
+
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -38,7 +64,7 @@
 				</form>
 		
 		<?php
-		$connect = mysqli_connect("localhost", "root", "", "test");
+		$connect = mysqli_connect("localhost", "root", "", "bookdb");
 		if(isset($_POST['submit'])){		
 			if($_POST['username']== 'admin' and $_POST['password']=='admin'){
 				echo '<script>alert("successful");</script>';
@@ -65,7 +91,7 @@
 			
 			
 			else{
-				echo '<script>alert("Hãy liên hệ với tổng đài 1900561252 Chúng tôi sẽ cung cấp mật khẩu lại cho bạn");</script>';
+				echo '<script>alert("Bạn Đã Nhập Sai . Kiểm Tra Lại");</script>';
 				
 			}
 					}
@@ -79,7 +105,7 @@
 		
 		?>
         <div id="formFooter">
-          <a class="underlineHover" name="forget" href="" onclick="alert('Hãy liên hệ với tổng đài 1900561252 Chúng tôi sẽ cung cấp mật khẩu lại cho bạn">Quên mật khẩu?</a>
+          <a class="underlineHover" name="forget" href="" onclick="alert('Hãy liên hệ số điện thoại +84 982 460 665 để làm theo hướng dẫn và tìm mật khẩu');">Quên mật khẩu?</a>
         
 		</div>
       </div>

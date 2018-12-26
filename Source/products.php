@@ -22,7 +22,7 @@
         <div class="top-bar-left">Free ship cho đơn hàng trên 100.000 &#8363;</div>
         <div class="top-bar-right">
             <div class="top-bar-right-content">
-                <a class="phone" href="">&nbsp;<i class="fas fa-phone-volume"></i> 01258906910&nbsp;</a>
+                <a class="phone" href="">&nbsp;<i class="fas fa-phone-volume"></i> +84 982 460 665&nbsp;</a>
                 <a class="login" href="login.php">Đăng nhập&nbsp;</a>
                 <a class="register" href="signup.php">Đăng kí&nbsp;</a>
             </div>
@@ -89,7 +89,7 @@
 				<?php
 				if(isset($_POST['add'])){
 							
-$connect = mysqli_connect("localhost", "root", "", "test");
+$connect = mysqli_connect("localhost", "root", "", "bookdb");
 														$sql = "INSERT INTO cart(id,name,image,price,quantity)
 							values('{$_POST['hidden_id']}','{$_POST['hidden_name']}','{$_POST['hidden_img']}','{$_POST['hidden_price']}',1)";
 							
@@ -108,8 +108,8 @@ $connect = mysqli_connect("localhost", "root", "", "test");
                     <div class="container">
                         <div class="row">
                         <?php
-						$connect = mysqli_connect("localhost", "root", "", "test");
-				$query = "SELECT * FROM products ORDER BY id ASC";
+						$connect = mysqli_connect("localhost", "root", "", "bookdb");
+				$query = "SELECT * FROM product ORDER BY id ASC";
 				$result = mysqli_query($connect, $query);
 				if(mysqli_num_rows($result) > 0)
 				{
@@ -120,7 +120,7 @@ $connect = mysqli_connect("localhost", "root", "", "test");
                             <div class="col-sm-4 col-md-4 prod">
 							<form method="post" name="form-submit" action="product-detail.php?action=&id=<?php echo $row["id"]; ?>">
 						
-                                <img src="book/<?php echo $row["image"]; ?>" alt="">
+                                <img src="img/<?php echo $row["image"]; ?>" alt="">
                                 <div class="product-index-info">
                                     <h3><?php echo $row["name"]; ?></h3>
                                     <p><?php echo $row["price"]; ?> &#x20AB;</p>
@@ -165,8 +165,8 @@ $connect = mysqli_connect("localhost", "root", "", "test");
                         <div class="row">
 						<?php
 				
-$connect = mysqli_connect("localhost", "root", "", "test");
-				$query = "SELECT * FROM fruit ORDER BY id ASC";
+$connect = mysqli_connect("localhost", "root", "", "bookdb");
+				$query = "SELECT * FROM langman ORDER BY id ASC";
 				$result = mysqli_query($connect, $query);
 				if(mysqli_num_rows($result) > 0)
 				{
@@ -177,7 +177,7 @@ $connect = mysqli_connect("localhost", "root", "", "test");
                             <div class="col-sm-4 col-md-4 prod">
                                 <form method="post" name="form-submit" action="product-detail.php?action=&id=<?php echo $row["id"]; ?>">
 						
-                                <img src="book/<?php echo $row["image"]; ?>" alt="">
+                                <img src="img/<?php echo $row["image"]; ?>" alt="">
                                 <div class="product-index-info">
                                     <h3><?php echo $row["name"]; ?></h3>
                                     <p><?php echo $row["price"]; ?> &#x20AB;</p>
@@ -187,7 +187,7 @@ $connect = mysqli_connect("localhost", "root", "", "test");
 
 						<input type="hidden" name="hidden_name" value="<?php echo $row["name"]; ?>" />
 
-						<input type="hidden" name="hidden_price" value	="<?php echo $row["price"]; ?>" />
+						<input type="hidden" name="hidden_price" value="<?php echo $row["price"]; ?>" />
 						<input type="hidden" name="hidden_des" value="<?php echo $row["description"]; ?>" />
 						 <div class="button">
 						 <button class="btn btn-success" type="submit">Xem chi tiết</button>
@@ -225,7 +225,7 @@ $connect = mysqli_connect("localhost", "root", "", "test");
                         <div class="row">
 						 <?php
 				
-$connect = mysqli_connect("localhost", "root", "", "test");
+$connect = mysqli_connect("localhost", "root", "", "bookdb");
 				$query = "SELECT * FROM veg ORDER BY id ASC";
 				$result = mysqli_query($connect, $query);
 				if(mysqli_num_rows($result) > 0)
@@ -237,7 +237,7 @@ $connect = mysqli_connect("localhost", "root", "", "test");
                             <div class="col-sm-4 col-md-4 prod">
                                 <form method="post" name="form-submit" action="product-detail.php?action=&id=<?php echo $row["id"]; ?>">
 						
-                                <img src="book/<?php echo $row["image"]; ?>" alt="">
+                                <img src="img/<?php echo $row["image"]; ?>" alt="">
                                 <div class="product-index-info">
                                     <h3><?php echo $row["name"]; ?></h3>
                                     <p><?php echo $row["price"]; ?> &#x20AB;</p>
@@ -283,7 +283,7 @@ $connect = mysqli_connect("localhost", "root", "", "test");
                        <div class="row">
                         <?php
                
-$connect = mysqli_connect("localhost", "root", "", "test");
+$connect = mysqli_connect("localhost", "root", "", "bookdb");
                $query = "SELECT * FROM khoahoc ORDER BY id ASC";
                $result = mysqli_query($connect, $query);
                if(mysqli_num_rows($result) > 0)
@@ -295,7 +295,7 @@ $connect = mysqli_connect("localhost", "root", "", "test");
                            <div class="col-sm-4 col-md-4 prod">
                                <form method="post" name="form-submit" action="product-detail.php?action=&id=<?php echo $row["id"]; ?>">
                        
-                               <img src="book/<?php echo $row["image"]; ?>" alt="">
+                               <img src="img/<?php echo $row["image"]; ?>" alt="">
                                <div class="product-index-info">
                                    <h3><?php echo $row["name"]; ?></h3>
                                    <p><?php echo $row["price"]; ?> &#x20AB;</p>
@@ -342,7 +342,7 @@ $connect = mysqli_connect("localhost", "root", "", "test");
                        <div class="row">
                         <?php
                
-$connect = mysqli_connect("localhost", "root", "", "test");
+$connect = mysqli_connect("localhost", "root", "", "bookdb");
                $query = "SELECT * FROM vientuong ORDER BY id ASC";
                $result = mysqli_query($connect, $query);
                if(mysqli_num_rows($result) > 0)
@@ -354,7 +354,7 @@ $connect = mysqli_connect("localhost", "root", "", "test");
                            <div class="col-sm-4 col-md-4 prod">
                                <form method="post" name="form-submit" action="product-detail.php?action=&id=<?php echo $row["id"]; ?>">
                        
-                               <img src="book/<?php echo $row["image"]; ?>" alt="">
+                               <img src="img/<?php echo $row["image"]; ?>" alt="">
                                <div class="product-index-info">
                                    <h3><?php echo $row["name"]; ?></h3>
                                    <p><?php echo $row["price"]; ?> &#x20AB;</p>

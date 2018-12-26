@@ -1,10 +1,10 @@
 <?php 
 session_start();
-$connect = mysqli_connect("localhost", "root", "", "test");
+$connect = mysqli_connect("localhost", "root", "", "bookdb");
 	
 						function add(){
 							
-$connect = mysqli_connect("localhost", "root", "", "test");
+$connect = mysqli_connect("localhost", "root", "", "bookdb");
 														$sql = "INSERT INTO cart(id,name,image,price,quantity)
 							values('{$_POST['hidden_id']}','{$_POST['hidden_name']}','{$_POST['hidden_img']}','{$_POST['hidden_price']}',1)";
 							
@@ -144,7 +144,7 @@ $connect = mysqli_connect("localhost", "root", "", "test");
 							<div class="col-sm-4 col-md-4 prod">
 							<form method="post" name="form-submit" action="product-detail.php?action=&id=<?php echo $row["id"]; ?>">
 						
-                                <img src="book/<?php echo $row["image"]; ?>" alt="">
+                                <img src="img/<?php echo $row["image"]; ?>" alt="">
                                 <div class="product-index-info">
                                     <h3><?php echo $row["name"]; ?></h3>
                                     <p><?php echo $row["price"]; ?> &#x20AB;</p>

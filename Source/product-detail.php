@@ -1,7 +1,7 @@
 
 <?php 
 session_start();
-$connect = mysqli_connect("localhost", "root", "", "test");
+$connect = mysqli_connect("localhost", "root", "", "bookdb");
 
 ?>
 <!------ Include the above in your HEAD tag ---------->
@@ -28,7 +28,7 @@ $connect = mysqli_connect("localhost", "root", "", "test");
     <div class="top-bar-left">Free ship cho đơn hàng trên 100.000 &#8363;</div>
     <div class="top-bar-right">
       <div class="top-bar-right-content">
-        <a class="phone" href="">&nbsp;<i class="fas fa-phone-volume"></i> 01258906910&nbsp;</a>
+        <a class="phone" href="">&nbsp;<i class="fas fa-phone-volume"></i> +84 982 460 665&nbsp;</a>
         <a class="login" href="login.php">Đăng nhập&nbsp;</a>
         <a class="register" href="signup.php">Đăng kí&nbsp;</a>
       </div>
@@ -81,7 +81,7 @@ $connect = mysqli_connect("localhost", "root", "", "test");
 
 if(isset($_POST['addtocart'])){
 							
-$connect = mysqli_connect("localhost", "root", "", "test");
+$connect = mysqli_connect("localhost", "root", "", "bookdb");
 														$sql = "INSERT INTO cart(id,name,image,price)
 							values('{$_POST['hidden_id']}','{$_POST['hidden_name']}','{$_POST['hidden_img']}','{$_POST['hidden_price']}')";
 							
@@ -108,16 +108,16 @@ $connect = mysqli_connect("localhost", "root", "", "test");
           <div class="preview col-md-6">
 
             <div class="preview-pic tab-content">
-              <div class="tab-pane active" id="pic-1"><img src="book/<?php echo $_POST["hidden_img"]; ?> "/></div>
-              <div class="tab-pane" id="pic-2"><img src="book/<?php echo $_POST["hidden_img"]; ?> "/></div>
-              <div class="tab-pane" id="pic-3"><img src="book/<?php echo $_POST["hidden_img"]; ?> "/></div>
-              <div class="tab-pane" id="pic-4"><img src="book/<?php echo $_POST["hidden_img"]; ?>"/></div>
+              <div class="tab-pane active" id="pic-1"><img src="img/<?php echo $_POST["hidden_img"]; ?> "/></div>
+              <div class="tab-pane" id="pic-2"><img src="img/<?php echo $_POST["hidden_img"]; ?> "/></div>
+              <div class="tab-pane" id="pic-3"><img src="img/<?php echo $_POST["hidden_img"]; ?> "/></div>
+              <div class="tab-pane" id="pic-4"><img src="img/<?php echo $_POST["hidden_img"]; ?>"/></div>
             </div>
             <ul class="preview-thumbnail nav nav-tabs">
-              <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="book/<?php echo $_POST["hidden_img"]; ?>"/></a></li>
-              <li><a data-target="#pic-2" data-toggle="tab"><img src="book/<?php echo $_POST["hidden_img"]; ?>"/></a></li>
-              <li><a data-target="#pic-3" data-toggle="tab"><img src="book/<?php echo $_POST["hidden_img"]; ?>"/></a></li>
-              <li><a data-target="#pic-4" data-toggle="tab"><img src="book/<?php echo $_POST["hidden_img"]; ?>"/></a></li>
+              <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="img/<?php echo $_POST["hidden_img"]; ?>"/></a></li>
+              <li><a data-target="#pic-2" data-toggle="tab"><img src="img/<?php echo $_POST["hidden_img"]; ?>"/></a></li>
+              <li><a data-target="#pic-3" data-toggle="tab"><img src="img/<?php echo $_POST["hidden_img"]; ?>"/></a></li>
+              <li><a data-target="#pic-4" data-toggle="tab"><img src="img/<?php echo $_POST["hidden_img"]; ?>"/></a></li>
             </ul>
 
           </div>
@@ -151,7 +151,7 @@ $connect = mysqli_connect("localhost", "root", "", "test");
 						<input type="hidden" name="hidden_des" value="<?php echo $_POST['hidden_des']; ?>" />
 						
             <div class="action">
-              <input class="add-to-cart btn btn-default" name="addtocart" type="submit" value="Thêm vào giỏ">
+              <input class="add-to-cart btn btn-default" name="addtocart" type="submit" value="Thêm vào giỏ" onclick="AddPro()">
             </div>
 			</form>
           </div>
@@ -234,7 +234,19 @@ $connect = mysqli_connect("localhost", "root", "", "test");
 					
 
 </body>
-
+<script>
+    var countPro = 0;
+	
+    function AddPro() {
+        window.scrollTo(0, 0)
+        countPro = countPro + 1;
+        document.getElementById("lblCartCount").innerHTML = countPro;
+		
+	};
+	
+	
+	
+</script>
 </html>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
